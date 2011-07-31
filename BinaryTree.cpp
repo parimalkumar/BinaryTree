@@ -8,12 +8,54 @@ BinaryTree::BinaryTree()
 	rootNode = NULL;
 }
 
+BinaryTree::~BinaryTree()
+{
+	if(rootNode == NULL)
+		return;		// Nothing to do
+	removeSubtree(rootNode);
+}
+
+void BinaryTree::removeSubtree(BinaryTreeNode* x)
+{
+	if(x == NULL)
+		return;	// Nothing to do
+		
+	BinaryTreeNode* left = x->leftNode;
+	BinaryTreeNode* right = x->rightNode;
+	
+	delete x;
+	removeSubtree(left);
+	removeSubtree(right);	
+	
+}
+
+void BinaryTree::postorderTreeWalk(BinaryTreeNode* x)
+{
+	if(x != NULL)
+	{
+		inorderTreeWalk(x->leftNode);
+		inorderTreeWalk(x->rightNode);
+		cout << "Node key: " << x->nodeKey << endl;
+	}
+}
+
+
 void BinaryTree::inorderTreeWalk(BinaryTreeNode* x)
 {
 	if(x != NULL)
 	{
 		inorderTreeWalk(x->leftNode);
 		cout << "Node key: " << x->nodeKey << endl;
+		inorderTreeWalk(x->rightNode);
+	}
+}
+
+void BinaryTree::preorderTreeWalk(BinaryTreeNode* x)
+{
+	if(x != NULL)
+	{
+		cout << "Node key: " << x->nodeKey << endl;
+		inorderTreeWalk(x->leftNode);
 		inorderTreeWalk(x->rightNode);
 	}
 }

@@ -16,3 +16,7 @@ BinaryTreeNode::BinaryTreeNode(double key)
 	nodeKey = key;
 }
 
+BinaryTreeNode::~BinaryTreeNode()
+{
+	
+}

@@ -11,5 +11,7 @@ using std::cout;
 using std::endl;
 
 void testBinaryTree01();
+void testBinaryTree02();
+
 
 #endif //TEST_STRUCTURES_H

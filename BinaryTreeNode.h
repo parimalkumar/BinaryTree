@@ -17,6 +17,7 @@ public:
 	
 	BinaryTreeNode();
 	BinaryTreeNode(double key);
+	~BinaryTreeNode();
 };
 
 #endif //BINARY_TREE_NODE_H
