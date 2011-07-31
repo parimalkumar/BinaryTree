@@ -11,6 +11,8 @@ public:
 	
 	BinaryTree();
 	
+	void inorderTreeWalk(BinaryTreeNode* x);
+	
 	void treeInsert(BinaryTreeNode* node);
 	
 	BinaryTreeNode* treeSearch(double k);

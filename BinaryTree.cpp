@@ -1,8 +1,21 @@
 #include "BinaryTree.h"
+#include <iostream>
+using std::cout;
+using std::endl;
 
 BinaryTree::BinaryTree()
 {
 	rootNode = NULL;
+}
+
+void BinaryTree::inorderTreeWalk(BinaryTreeNode* x)
+{
+	if(x != NULL)
+	{
+		inorderTreeWalk(x->leftNode);
+		cout << "Node key: " << x->nodeKey << endl;
+		inorderTreeWalk(x->rightNode);
+	}
 }
 
 void BinaryTree::treeInsert(BinaryTreeNode* node)

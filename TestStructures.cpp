@@ -24,4 +24,7 @@ void testBinaryTree01()
 		myTree->treeInsert(myNode);
 	}
 	cout << "Finished inserting nodes into tree" << endl;
+	
+	cout << "Printing the nodes in the tree" << endl;
+	myTree->inorderTreeWalk(myTree->rootNode);
 }
