@@ -74,14 +74,14 @@ void BinaryTree::treeInsert(BinaryTreeNode* node)
 			x = x->rightNode;
 	}
 	node->parentNode = y;
-	
+	//check condition for empty node
 	if(y == NULL)
 	{
 		rootNode = node; 	// tree was empty
-	} else if (node->nodeKey < y->nodeKey)
+	} else if (node->nodeKey < y->nodeKey) //if the new node is smaller than the old node (left)
 	{
 		y->leftNode = node;
-	} else
+	} else //if the new node is smaller than the old node (right)
 	{
 		y->rightNode = node;
 	}
